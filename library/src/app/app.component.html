@@ -1,0 +1,16 @@
+<h2>Books</h2>
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input matInput type="text" placeholder="Search books" [value]="search" (keyup)="onKeySearch($event)">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Max results</mat-label>
+    <input matInput type="text" placeholder="Max results" [value]="maxResults" (keyup)="onKeyMaxResults($event)">
+  </mat-form-field>
+  <button mat-stroked-button (click)="searchBook()">Search</button>
+</form>
+<app-book-list class="book-list" [books]="books$ | async" (add)="onAdd($event)"></app-book-list>
+
+<h2>My Collection</h2>
+<app-book-collection class="book-collection" [books]="bookCollection$ | async" (remove)="onRemove($event)"></app-book-collection>

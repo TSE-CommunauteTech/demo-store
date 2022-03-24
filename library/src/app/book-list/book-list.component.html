@@ -1,0 +1,4 @@
+<div class="book-item" *ngFor="let book of books">
+  <span><i>{{book?.volumeInfo?.title}}</i></span><span> by {{book?.volumeInfo?.authors}}    </span>
+  <button mat-stroked-button (click)="add.emit(book?.id)" data-test="add-button">Add to collection</button>
+</div>
